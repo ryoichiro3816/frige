@@ -1,0 +1,51 @@
+<h1>Ingredients</h1>
+</br>
+</br>
+<div class="header">
+  <%= search_form_for @q, url: ingredients_path do |f| %>
+    <div class="button_search_field">
+        <div class="search_box">
+         <%= f.search_field :name_cont, class:"search_field", placeholder: 'キーワードで検索する' %>
+        </div>
+        <div class="search_button">
+          <%= button_tag :type => "submit", :class => "button_tag" do %>
+            <i class="fas fa-search fa-2x index_search_icon"></i>
+          <% end %>
+        </div>
+        <div class="add_button">
+          <%= link_to new_ingredient_path do %>
+            <button type="button" class="btn btn-warning index_new_button">ADD</button>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container_parent">
+  <div class="container_children">
+    <% @ingredients.each do |ingredient| %>
+      <div class="item" style="width: 200px">
+        <%# <%= link_to image_tag()%> 
+        <h5><%= ingredient.name %></h5>
+        <h5><%= ingredient.number %></h5>
+        <div class="item_button">
+          <%# <%= link_to movie_path(movie) do %> 
+            <button type="button" class="detail_button">詳細</button>
+          <%# <% end %>
+        </div>
+        <div class="item_button">
+          <%= link_to edit_ingredient_path(ingredient) do %>
+            <button type="button" class="edit_button">編集</button>
+          <% end %>
+        </div>
+        <div class="item_button">
+          <%= link_to ingredient_path(ingredient), method: :delete, data: { confirm: "You sure?"} do %>
+            <button type="button" class="delete_button">削除</button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= will_paginate%>

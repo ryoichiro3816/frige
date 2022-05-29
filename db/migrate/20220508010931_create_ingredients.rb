@@ -3,7 +3,7 @@ class CreateIngredients < ActiveRecord::Migration[6.1]
     create_table :ingredients do |t|
       t.string :name
       t.date :expiry
-      t.int :number
+      t.integer :number
 
       t.timestamps
     end

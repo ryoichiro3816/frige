@@ -1,0 +1,259 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "font-awesome";
+// @import "font-awesome-sprockets";
+
+
+// body{
+//   background-color: #D3E8C1;
+// }
+
+/* index.html.erb */
+//映画一覧のコンテナ
+.container_parent{
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
+ 
+}
+.container_children{
+  display: flex;
+  justify-content: left;
+  // justify-content: space-evenly;
+  flex-wrap: wrap;
+  width:50%;
+}
+.container_children div{
+  padding-bottom: 15px;
+  margin-right: 40px;
+  
+}
+.item{
+  background-color:white;
+  height: 250px;
+  margin-bottom: 20px;	
+  position: relative;
+}
+.item h5{
+  display: block;
+  height:35px;
+  margin-left:15px
+}
+.item_button{
+  display: flex;
+  margin-left:15px
+}
+.item_button a{
+  display: block;
+}
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination > li > a {
+  border: none;
+  color: #999;
+  font-weight: bold;
+}
+.pagination > li > a:hover {
+  color: #04a70c;
+  background-color: white;
+}
+.pagination > .active > a {
+  color: #04a70c;
+  background-color: white;
+}
+.pagination > .active > a:hover {
+  background-color: white;
+  color: #04a70c;
+}
+/* --ページネーション */
+
+.detail_button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: #04a70c;
+  transition: .2s;
+  border-radius: 3px;
+  border: none;
+}
+.detail_button:hover {
+  background: #D3E8C1;
+  color: white;
+}
+
+.edit_button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: blue;
+  transition: .2s;
+  border-radius: 3px;
+  border: none;
+}
+.edit_button:hover {
+  background: #bbbade;
+  color: white;
+}
+
+.delete_button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: #e60624;
+  transition: .2s;
+  border-radius: 3px;
+  border: none;
+}
+.delete_button:hover {
+  background: #edb2b2;
+  color: white;
+}
+//　検索フォーム
+.button_search_field{
+  display: flex;
+  justify-content: center;
+}
+.inner_button_search_field{
+  display: flex;
+}
+.search_field{
+  width:700px;
+  background-color: lightgray;
+  border: none; 
+  //検索フォームを大きくする
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size:17px;
+}
+.button_tag{
+  background-color: transparent;
+  border: none; 
+  padding-top:8px;
+  margin-left:10px;
+}
+.index_search_icon:hover{
+  transition: .2s;
+  color: #04a70c;/*ボタン色*/;
+}
+.add_button button{
+  width: 60px;
+}
+//ラジオボタン(radiobuttonとlabelタグ使って,radioボタンの見た目を変えている)
+.index_radio_buttons{
+  display: flex;
+  justify-content: center;
+}
+
+input[type=radio] {
+  display: none;     /* ラジオボタンを非表示にする */
+}
+
+#q_is_showing_eq_1:checked ~ #label1{
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  background: #04a70c;/*ボタン色*/
+  color: white;
+}
+#q_is_showing_eq_0:checked ~ #label2{
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  background: #04a70c;/*ボタン色*/
+  color: white;
+}
+#q_is_showing_eq_:checked ~ #label3{
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  background: #04a70c;/*ボタン色*/
+  color: white;
+}
+// .index_label:hover {
+//   background-color: red;     /* マウスオーバー時の背景色を指定する */
+// }
+.index_label {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: lightgray;/*ボタン色*/
+  color: gray;
+  border-bottom: solid 5px gray;
+  border-radius: 3px;
+  margin-left: 14px;
+  margin-bottom: 14px;
+}
+.admin_index_header{
+  display: flex;
+  justify-content: flex-end;
+}
+.admin_index_new_button{
+  display: block;
+  padding-right: 30px;
+}
+.index_new_button{
+  width: 300px;
+}
+
+//　edit.html.erb
+input[type="text"] {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="date"] {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="number"] {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="submit"] {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+}
+.save_button{
+  display: flex;
+  justify-content: center;
+}
+label{
+  display: flex;
+  padding-left: 435px
+}
+ // エラーメッセージ
+ $red: #e71811;
+ .field_with_errors{
+  display: flex;
+ }          
+ .field_with_errors input,
+ .field_with_errors select{
+   outline: 0;
+   border-color: $red !important;
+ }
+ .errors{
+   margin-top: 8px;
+   color: $red;
+ }

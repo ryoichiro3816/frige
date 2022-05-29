@@ -1,0 +1,13 @@
+<h1>Ingredient Change</h1>
+
+<div>
+  <div class="col-md-6 offset-md-3">
+    <%= form_with(model: @ingredient, url: ingredient_path(@ingredient), local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.label :name, '食材' %> <%= f.text_field :name, class: 'form-control' %></br>
+      <%= f.label :expiry, '賞味期限' %> <%= f.date_field :expiry, class: 'form-control'%></br>
+      <%= f.label :number, '個数' %> <%= f.number_field :number, class: 'form-control'%></br>
+      <%= f.submit 'Update', class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
