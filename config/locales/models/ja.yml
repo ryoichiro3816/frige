@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      ingredient: 食材
+      user: 利用者
+    attributes:
+      ingredient:
+        name: 名前
+        expiry: 賞味期限
+        number: 個数
+      user:
+        role: 役職
+        name: 名前
+        email: メールアドレス
+  activemodel:
+    models:
+      request_form: 申請フォーム
+    attributes:
+      request_form:
+        description: 申請理由

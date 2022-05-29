@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+ @import "font-awesome";
+ 
+.notifications {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+    font-size: 30px;
+  }
+
+  .alert {
+    background-color: orange;
+    font-size: 30px;
+  }
+}

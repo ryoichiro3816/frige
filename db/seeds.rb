@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ingredient.create([
+  { name: 'Egg', expiry: Date.new(2022, 5 ,15), number: 12},
+  { name: 'Butter', expiry: Date.new(2022, 5 ,12), number: 1},
+  { name: 'Cheese', expiry: Date.new(2022, 5 ,22), number: 1},
+  { name: 'Milk', expiry: Date.new(2022, 5 ,18), number: 1},
+])

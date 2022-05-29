@@ -1,0 +1,17 @@
+<h1>Ingredient Change</h1>
+
+<div>
+  <div class="container">
+    <div class="row justify-content-md-center">
+        <%= form_with(model: @ingredient, builder: WithErrorFormBuilder, url: ingredients_path, class: "col-md-auto", local: true) do |f| %>
+          <%= render 'shared/error_messages', model: f.object %>
+          <%= f.label :name, '食材' %> <%= f.text_field :name, class: 'form-control' %></br>
+          <%= f.label :expiry, '賞味期限' %> <%= f.date_field :expiry, class: 'form-control'%></br>
+          <%= f.label :number, '個数' %> <%= f.number_field :number, class: 'form-control'%></br>
+          <div class="save_button">
+            <%= f.submit 'Save', class:"btn btn-primary" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
