@@ -8,6 +8,9 @@ ja:
         name: 名前
         expiry: 賞味期限
         number: 個数
+        amount: 重量
+        number_or_amount: 個数または重量
+
       user:
         role: 役職
         name: 名前

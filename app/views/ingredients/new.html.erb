@@ -4,14 +4,27 @@
   <div class="container">
     <div class="row justify-content-md-center">
         <%= form_with(model: @ingredient, builder: WithErrorFormBuilder, url: ingredients_path, class: "col-md-auto", local: true) do |f| %>
-          <%= render 'shared/error_messages', model: f.object %>
+          <%# <%= render 'shared/error_messages', model: f.object %> 
           <%= f.label :name, '食材' %> <%= f.text_field :name, class: 'form-control' %></br>
           <%= f.label :expiry, '賞味期限' %> <%= f.date_field :expiry, class: 'form-control'%></br>
           <%= f.label :number, '個数' %> <%= f.number_field :number, class: 'form-control'%></br>
+          <%= f.label :amount, '重量(g)' %> <%= f.number_field :amount, class: 'form-control'%></br>
+          <div class="upload_button">
+            <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png"  %>
+          </div>
           <div class="save_button">
             <%= f.submit 'Save', class:"btn btn-primary" %>
           </div>
         <% end %>
+        <script type="text/javascript">
+          $("#ingredient_image").bind("change", function() {
+          var size_in_megabytes = this.files[0].size/1024/1024;
+          if (size_in_megabytes > 5) {
+            alert("Maximum file size is 5MB. Please choose a smaller file.");
+            $("#ingredient_image").val("");
+            }
+          });
+        </script>
     </div>
   </div>
 </div>

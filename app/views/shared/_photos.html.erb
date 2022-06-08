@@ -1,0 +1,4 @@
+<%# 写真をクリックしたときの実行アクション（showなのでphoto_path(photo.id)）とリクエスト形式（jsなのでremote: true） を指定 %>
+<%= link_to ingredient_path(ingredient.id), remote: true do %>
+  <%= image_tag ingredient.display_image if ingredient.image.attached?, class: "photo-img", id: "photo-img" %>
+<% end %>

@@ -5,7 +5,19 @@ ruby '2.7.4'
 
 gem 'rails-i18n'
 
+gem 'carrierwave',             '1.1.0'
+
+gem 'fog',                     '1.40.0'
+
 gem 'font-awesome-rails'
+
+gem 'active_storage_validations', '0.8.2'
+
+gem 'image_processing',           '1.9.3'
+
+gem 'mini_magick',                '4.9.5'
+
+gem 'rmagick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
