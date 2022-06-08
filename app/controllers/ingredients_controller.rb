@@ -5,12 +5,22 @@ class IngredientsController < ApplicationController
     @ingredients = @q.result.page(params[:page]).order("created_at desc")
   end
 
+  def show
+    @ingredient = Ingredient.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def new
     @ingredient = Ingredient.new
   end
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
+    @ingredient.image.attach(params[:ingredient][:image])
     if @ingredient.save
       redirect_to ingredients_path, notice: 'Success'
     else
@@ -25,6 +35,7 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient = Ingredient.find(params[:id])
+    @ingredient.image.attach(params[:ingredient][:image])
     if @ingredient.update(ingredient_params)
       redirect_to ingredients_path
     else
@@ -42,7 +53,7 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :expiry, :number)
+    params.require(:ingredient).permit(:name, :expiry, :number, :amount, :image)
   end
 
 end
